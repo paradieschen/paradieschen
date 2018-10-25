@@ -1,0 +1,4 @@
+@charset "UTF-8";
+.self-concept-tag ~ .self-concept-tag:before {
+  padding-right: 12px;
+  content: "•"; }

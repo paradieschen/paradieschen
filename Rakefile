@@ -13,6 +13,7 @@ task :publish do
   system 'git add build'
   message = "Build #{Time.now}"
   system "git commit -m '#{message}'"
+  system 'git pull page master'
   system 'git subtree push --prefix build page master'
   system 'git push'
 end

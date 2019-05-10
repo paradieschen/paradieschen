@@ -15,7 +15,7 @@
     = javascript_include_tag('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', crossorigin: 'anonymous', integrity: 'sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl')
 
     = favicon_tag 'images/favicon.ico'
-  %body.layout
-    .layout--navigation= partial 'layouts/navigation'
-    .layout--main= yield
-    .layout--footer= partial 'layouts/footer'
+  %body
+    %header= partial 'layouts/navigation'
+    %main= yield
+    %footer= partial 'layouts/footer'

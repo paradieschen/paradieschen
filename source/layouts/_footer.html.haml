@@ -1,8 +1,8 @@
 .footer.container
   %ul.nav.justify-content-end
     %li.nav-item
-    = link_to 'Newsletter abonnieren', 'https://riseup.us20.list-manage.com/subscribe/post?u=bc7884aeb028b1b026847f5e3&id=d18f5acd8a', class: 'nav-link', target: '_blank', rel: 'noopener'
+      = link_to_newsletter(title: 'Newsletter abonnieren', html_options: {class: 'nav-link'})
     %li.nav-item
-    = link_to 'Datenschutzerklärung', '/privacy', class: 'nav-link'
+      = link_to 'Datenschutzerklärung', '/privacy', class: 'nav-link'
     %li.nav-item
       = link_to 'Impressum', '/imprint', class: 'nav-link'

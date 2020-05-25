@@ -1,8 +1,6 @@
-.footer.container
-  %ul.nav.justify-content-end
-    %li.nav-item
-      = link_to_newsletter(title: 'Newsletter abonnieren', html_options: {class: 'nav-link'})
-    %li.nav-item
-      = link_to 'Datenschutzerklärung', '/privacy', class: 'nav-link'
-    %li.nav-item
-      = link_to 'Impressum', '/imprint', class: 'nav-link'
+.container.d-flex
+  %div
+  .ml-auto
+    = link_to_newsletter(title: 'Newsletter abonnieren', html_options: {class: 'pl-4'})
+    = link_to 'Datenschutzerklärung', '/privacy', class: 'pl-4'
+    = link_to 'Impressum', '/imprint', class: 'pl-4'

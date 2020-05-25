@@ -17,5 +17,5 @@
     = favicon_tag 'images/favicon.ico'
   %body
     %header= partial 'layouts/navigation'
-    %main= yield
-    %footer= partial 'layouts/footer'
+    %main.container= yield
+    %footer.footer= partial 'layouts/footer'

@@ -1,3 +1,5 @@
+require 'open3'
+
 namespace :assets do
   task :precompile do
     sh "middleman build"
@@ -5,19 +7,21 @@ namespace :assets do
 end
 
 
-# In case of errors when the subtree needs a force push try
-#   git pull page master
-# Or force push the subtree (other changes may be lost)
-#   git push page `git subtree split --prefix build`:master
 task :publish do
   raise 'Please commit all changes before publishing' unless system 'git diff --exit-code'
   raise 'Please commit all changes before publishing' unless system 'git diff --cached --exit-code'
 
-  system 'middleman build'
+  commit_message = "Build #{Time.now}"
 
-  system 'git add build'
-  message = "Build #{Time.now}"
-  system "git commit -m '#{message}'"
-  system 'git subtree push --prefix build page master'
-  system 'git push'
+  Open3.capture3('bundle exec middleman build')
+
+  Open3.capture3('git add .', chdir: 'build')
+  Open3.capture3('git', 'commit', '-m', commit_message, chdir: 'build')
+  Open3.capture3('git push', chdir: 'build')
+
+  Open3.capture3('git add build')
+  Open3.capture3('git', 'commit', '-m', commit_message)
+  Open3.capture3('git push')
+
+  puts 'New version published'
 end

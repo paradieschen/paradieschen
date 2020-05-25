@@ -1,0 +1,3 @@
+[submodule "build"]
+	path = build
+	url = git@paradieschen.github.com:paradieschen/paradieschen.github.io.git

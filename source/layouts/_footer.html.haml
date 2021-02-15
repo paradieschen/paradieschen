@@ -1,6 +1,8 @@
 .container.d-flex
   %div
+    = link_to_newsletter(title: 'E-Mail Newsletter', html_options: {class: 'pl-4'})
+    = link_to 'Facebook', 'https://www.facebook.com/paradieschen.augsburg', class: 'pl-4'
+    = link_to 'Instagram', 'https://www.instagram.com/paradieschen.augsburg', class: 'pl-4'
   .ml-auto
-    = link_to_newsletter(title: 'Newsletter abonnieren', html_options: {class: 'pl-4'})
     = link_to 'Datenschutzerklärung', '/privacy', class: 'pl-4'
     = link_to 'Impressum', '/imprint', class: 'pl-4'
